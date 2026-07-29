@@ -15,9 +15,9 @@ A production-grade, cross-platform Flutter application backed by a Node.js REST 
 
 ## 📱 App Screenshots
 
-| Real-Time Discussion | Log In Screen | Create Account Screen |
-|:---:|:---:|:---:|
-| <img src="screenshots/nested_comments.png" width="250"/> | <img src="screenshots/login.png" width="250"/> | <img src="screenshots/register.png" width="250"/> |
+| Real-Time Discussion | Comment Editing & Soft Delete | Log In Screen | Create Account Screen |
+|:---:|:---:|:---:|:---:|
+| <img src="screenshots/nested_comments.png" width="220"/> | <img src="screenshots/comment_editing.png" width="220"/> | <img src="screenshots/login.png" width="220"/> | <img src="screenshots/register.png" width="220"/> |
 
 ---
 
