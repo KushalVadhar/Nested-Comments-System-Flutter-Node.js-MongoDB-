@@ -4,6 +4,14 @@ A production-grade, cross-platform Flutter application backed by a Node.js REST 
 
 ---
 
+## 🌐 Live Production Deployment
+
+- **Backend Host**: Render Cloud Web Service (`Node.js 18+`)
+- **Database**: MongoDB Atlas Cloud Cluster
+- **Real-Time Gateway**: Secure WebSockets (`wss://`)
+
+---
+
 ## 🌟 Key Features
 
 1. **O(n) HashMap Tree Algorithm**: High-performance comment tree construction with an **orphan queue mechanism** that handles out-of-order comments arriving before their parent. Supports unlimited depth.
@@ -30,7 +38,7 @@ A production-grade, cross-platform Flutter application backed by a Node.js REST 
             │ REST              │ WebSocket
             ▼                   ▼
  ┌─────────────────────────────────────────────────────────┐
- │                     Node.js Backend                     │
+ │               Node.js Backend (Render Cloud)            │
  │  ┌──────────────┐   ┌─────────────────┐  ┌───────────┐  │
  │  │ Express API  │   │ WebSocket (ws)  │  │ Middleware│  │
  │  └───────┬──────┘   └────────┬────────┘  └───────────┘  │
@@ -49,7 +57,7 @@ A production-grade, cross-platform Flutter application backed by a Node.js REST 
 The application stores and manages message data across 4 distinct layers:
 
 ### 1. Database Layer (Persistent Storage)
-- **Database**: MongoDB (Atlas Cloud Cluster / Local MongoDB).
+- **Database**: MongoDB Atlas Cloud Cluster.
 - **Collection**: `comments`
 - **Stored Data Structure**:
   ```json
@@ -92,10 +100,10 @@ The application stores and manages message data across 4 distinct layers:
 - **`flutter_secure_storage`**: Platform-native encrypted storage for JWT token persistence.
 
 ### Backend: Node.js (Express & `ws`)
-- **Node.js + Express**: Event-driven asynchronous execution model ideal for handling concurrent WebSocket connections and lightweight REST endpoints.
+- **Node.js + Express**: Event-driven asynchronous execution model ideal for handling concurrent WebSocket connections and lightweight REST endpoints. Hosted live on Render Cloud.
 - **WebSocket (`ws`)**: Native WebSocket protocol without heavy Socket.io overhead, ensuring raw speed and standard protocol compatibility.
 
-### Database: MongoDB
+### Database: MongoDB Atlas
 - **Rationale**: Nested comment hierarchies are document-oriented by nature. MongoDB's flexible schema and indexed query support (`parentId`, `eventId`, `createdAt`) make it highly performant for tree traversal and live event streaming.
 
 ---
@@ -121,16 +129,16 @@ The application stores and manages message data across 4 distinct layers:
 
 ### Prerequisites
 - Node.js (v18+)
-- MongoDB (Atlas Cloud Cluster or Local MongoDB)
+- MongoDB Atlas Cluster URI or Local MongoDB
 - Flutter SDK (v3.0.0+)
 
-### 1. Backend Setup
+### 1. Backend Setup (Local / Cloud)
 ```bash
 cd backend
 npm install
 ```
 
-Create a `.env` file in `backend/`:
+Copy `backend/.env.example` to `backend/.env`:
 ```env
 PORT=5000
 MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.rl3sxmm.mongodb.net/nested_comments_db?retryWrites=true&w=majority
@@ -209,4 +217,4 @@ Tree construction uses an $O(n)$ HashMap approach:
   - Custom $O(n)$ HashMap tree algorithm and orphan queue logic.
   - Missed event recovery mechanism via `eventId`.
   - Scoped node rebuild state management architecture.
-  - MongoDB Atlas Cloud integration and custom Express middleware.
+  - Render Cloud Deployment & MongoDB Atlas Cloud integration.
