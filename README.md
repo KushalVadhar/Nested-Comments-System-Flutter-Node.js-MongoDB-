@@ -13,6 +13,14 @@ A production-grade, cross-platform Flutter application backed by a Node.js REST 
 
 ---
 
+## 📱 App Screenshots
+
+| Main Discussion Screen | Account Auth Screen |
+|:---:|:---:|
+| ![Nested Comments Discussion](screenshots/app_discussion.png) | ![Authentication Screen](screenshots/app_login.png) |
+
+---
+
 ## 🌟 Key Features
 
 1. **O(n) HashMap Tree Algorithm**: High-performance comment tree construction with an **orphan queue mechanism** that handles out-of-order comments arriving before their parent. Supports unlimited depth.
