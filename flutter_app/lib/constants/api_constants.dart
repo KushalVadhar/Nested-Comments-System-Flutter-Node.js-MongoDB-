@@ -1,11 +1,11 @@
 class ApiConstants {
-  // Base URLs - Adjust according to platform (10.0.2.2 for Android Emulator, localhost for iOS/Desktop)
-  static const String baseUrl = 'http://10.0.2.2:5000/api';
-  static const String wsUrl = 'ws://10.0.2.2:5000';
+  // Live Render Production Cloud URLs (Works 24/7 for anyone, anywhere):
+  static const String baseUrl = 'https://nested-comments-system-flutter-node-js.onrender.com/api';
+  static const String wsUrl = 'wss://nested-comments-system-flutter-node-js.onrender.com';
 
-  // Fallback / Desktop / iOS URL:
-  static const String baseUrlLocal = 'http://localhost:5000/api';
-  static const String wsUrlLocal = 'ws://localhost:5000';
+  // Local Emulator / Desktop testing fallback:
+  static const String baseUrlLocal = 'http://10.0.2.2:5000/api';
+  static const String wsUrlLocal = 'ws://10.0.2.2:5000';
 
   // Auth Endpoints
   static const String register = '/auth/register';
