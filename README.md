@@ -6,9 +6,10 @@ A production-grade, cross-platform Flutter application backed by a Node.js REST 
 
 ## 🌐 Live Production Deployment
 
-- **Backend Host**: Render Cloud Web Service (`Node.js 18+`)
+- **Live Backend Host**: Render Cloud (`https://nested-comments-system-flutter-node-js.onrender.com`)
+- **Live REST API**: `https://nested-comments-system-flutter-node-js.onrender.com/api`
+- **Live WebSocket Gateway**: `wss://nested-comments-system-flutter-node-js.onrender.com`
 - **Database**: MongoDB Atlas Cloud Cluster
-- **Real-Time Gateway**: Secure WebSockets (`wss://`)
 
 ---
 
